@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:41:55 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 15:22:53 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/18 23:06:07 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <string.h>
+# include <limits.h>
 
 typedef struct s_list
 {

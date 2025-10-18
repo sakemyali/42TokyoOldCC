@@ -6,36 +6,28 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:27 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 15:22:53 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:49:42 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	s;
-	unsigned int	res;
+	size_t			dlen;
+	size_t			i;
+	size_t			slen;
 
+	dlen = ft_strlen(dst);
+	slen = ft_strlen(src);
+	if (size <= dlen)
+		return (slen + size);
 	i = 0;
-	while (dest[i])
-		i++;
-	s = 0;
-	while (src[s])
-		s++;
-	if (size > i)
-		res = s + i;
-	else
-		res = s + size;
-	j = 0;
-	while (src[j] && (i + 1) < size)
+	while (src[i] && (dlen + i + 1) < size)
 	{
-		dest[i] = src[j];
+		dst[dlen + i] = src[i];
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
-	return (res);
+	dst[i] = '\0';
+	return (slen + dlen);
 }

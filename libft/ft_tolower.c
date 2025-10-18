@@ -6,8 +6,15 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:22:38 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 15:22:53 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:56:53 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
+}

@@ -6,15 +6,15 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:36 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 15:22:53 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/18 19:30:02 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

@@ -6,8 +6,15 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:22:41 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 15:22:53 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:57:34 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}

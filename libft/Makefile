@@ -1,8 +1,7 @@
 NAME = libft
 
 #need changes in srcs
-SRCS = srcs/file_error_handling.c srcs/header_error_handling.c srcs/map_error_handling.c srcs/solver.c srcs/free.c srcs/print.c \
-srcs/utils.c srcs/main.c srcs/ft_split.c srcs/read_file.c
+SRCS = *.c *.h
 
 OBJS = ${SRCS:.c=.o}
 

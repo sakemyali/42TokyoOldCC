@@ -6,13 +6,13 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:27 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 16:49:42 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/21 23:42:07 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t			dlen;
 	size_t			i;

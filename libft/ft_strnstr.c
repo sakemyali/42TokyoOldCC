@@ -6,20 +6,20 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:17:18 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 22:57:13 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/21 23:40:51 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	if (little[0] == '\0')
-		return (big);
+		return ((char *)big);
 	while (i < len && big[i])
 	{
 		j = 0;

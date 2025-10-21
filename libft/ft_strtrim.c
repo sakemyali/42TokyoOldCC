@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:19:32 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/20 06:03:09 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/21 18:59:12 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,28 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
-	int		*tofind;
+	size_t	j;
+	size_t	k;
 	char	*str;
-	size_t	slen;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	if (set[0] == '\0')
-		return (s1);
-	slen = ft_strlen(s1);
-	tofind = ft_strstr(s1, set);
-	str = (char *)malloc((slen - (tofind[1] - tofind[0])) * sizeof(char) + 1);
+	i = 0;
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	j = ft_strlen(s1);
+	while (j > i && ft_strchr(set, s1[j - 1]))
+		j--;
+	str = (char *)malloc(j - i + 1);
 	if (!str)
 		return (NULL);
-	while (i < tofind[0])
+	k = 0;
+	while (i < j)
 	{
-		str[i++] = s1[i++];
+		str[k] = s1[i];
+		i++;
+		k++;
 	}
-	while (str[tofind[1]])
-	{
-		str[i++] = s1[tofind[1]++];
-	}
-	str[tofind[1]] = '\0';
+	str[k] = '\0';
 	return (str);
 }

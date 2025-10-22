@@ -3,7 +3,6 @@ NAME		= libft.a
 SRCS		= ft_memset.c \
 			  ft_bzero.c \
 			  ft_memcpy.c \
-			  ft_memccpy.c \
 			  ft_memmove.c \
 			  ft_memchr.c \
 			  ft_memcmp.c \
@@ -36,36 +35,26 @@ SRCS		= ft_memset.c \
 			  ft_putnbr_fd.c \
 			  ft_striteri.c
 
-BNS_SRCS	= ft_lstnew.c \
-			  ft_lstadd_front.c \
-			  ft_lstsize.c \
-			  ft_lstlast.c \
-			  ft_lstadd_back.c \
-			  ft_lstdelone.c \
-			  ft_lstclear.c \
-			  ft_lstiter.c \
-			  ft_lstmap.c \
+OBJS		= $(SRCS:.c=.o)
 
-OBJS		= $(SRCS:%.c=%.o)
+CC			= cc
 
-BNS_OBJS	= $(BNS_SRCS:%.c=%.o)
+FLAGS		= -Wall -Werror -Wextra -I ./
 
-FLAGS		= -Wall -Werror -Wextra
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):
-	gcc $(FLAGS) -c $(SRCS) -I ./
+$(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 all: $(NAME)
 
-bonus: $(NAME)
-	gcc $(FLAGS) -c $(BNS_SRCS) -I ./
-	ar rc $(NAME) $(BNS_OBJS)
-
 clean:
-	rm -f $(OBJS) $(BNS_OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

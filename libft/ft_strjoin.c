@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:24 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/20 03:46:34 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:57:10 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	str = (char *)malloc(len1 + len2 +1);
+	str = (char *)malloc(len1 + len2 + 1);
 	if (!str)
 		return (NULL);
 	i = 0;

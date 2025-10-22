@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:15:17 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/21 23:38:46 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:46:09 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ size_t	nbrlen(long n)
 	return (i);
 }
 
-char *getnbrstr(long n, size_t nlen, int sign)
+char	*getnbrstr(long n, size_t nlen, int sign)
 {
-	char *res;
+	char	*res;
 
 	res = (char *)malloc(nlen + 1 + sign);
 	if (!res)

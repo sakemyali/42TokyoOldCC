@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:15:04 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 23:10:47 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 20:05:32 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	ft_atoi(const char *nptr)
 		res = (res * 10) + (nptr[i] - '0');
 		i++;
 	}
-	return (sign * (int)res);
+	return (sign * ((int)res));
 }

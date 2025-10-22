@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:13:59 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/21 23:13:13 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:16:07 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		d[i] = s[i];
 		i++;
 	}
-	return (d);
+	return ((void *)d);
 }

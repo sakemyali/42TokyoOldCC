@@ -6,23 +6,16 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:41:55 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/21 23:48:21 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 20:05:13 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <limits.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+# include <unistd.h> // write
+# include <stdlib.h> // malloc, free
+# include <limits.h> // INT_MAX, LONG_MAX, SIZE_MAX
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:17:18 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/21 23:40:51 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 20:05:03 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (i + j < len && big[i + j] != '\0' && big[i + j] == little[j])
 		{
 			if (little[j + 1] == '\0')
-				return ((char *)&big[i]);
+				return ((char *)&(big[i]));
 			++j;
 		}
 		++i;

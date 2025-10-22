@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:09 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/21 23:25:46 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 20:05:07 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	while (str[i])
 	{
-		write(fd, &str[i], 1);
+		write(fd, &(str[i]), 1);
 		i++;
 	}
 	free(str);

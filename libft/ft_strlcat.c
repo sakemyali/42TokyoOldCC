@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: mvrm <mvrm@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:27 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/21 23:42:07 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 02:24:27 by mvrm             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[dlen + i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	dst[dlen + i] = '\0';
 	return (slen + dlen);
 }

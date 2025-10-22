@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: mvrm <mvrm@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:18:39 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 19:28:08 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/22 02:22:32 by mvrm             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 char *ft_strrchr(const char *s, int c)
 {
-	char *sup;
 	int i;
 	int count;
+	unsigned char cc;
 
+	cc = (unsigned char)c;
 	count = -1;
-	sup = (char *)s;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
+		if ((unsigned char)s[i] == cc)
 			count = i;
-		}
 		i++;
 	}
-	if (count == 0)
+	if (cc == '\0')
+		return ((char *)s + i);
+	if (count == -1)
 		return (NULL);
-	return (sup + count);
+	return ((char *)s + count);
 }

@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 17:55:51 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:19:45 by mosakura         ###   ########.fr       */
+/*   Created: 2025/10/23 19:48:17 by mosakura          #+#    #+#             */
+/*   Updated: 2025/10/23 19:52:13 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *, ...)
+#include "libft.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%d\n", "gwg");
-	return 0;
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

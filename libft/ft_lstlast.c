@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 17:55:51 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:19:45 by mosakura         ###   ########.fr       */
+/*   Created: 2025/10/23 19:12:35 by mosakura          #+#    #+#             */
+/*   Updated: 2025/10/23 19:14:29 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *, ...)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%d\n", "gwg");
-	return 0;
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

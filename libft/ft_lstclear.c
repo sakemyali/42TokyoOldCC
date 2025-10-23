@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 17:55:51 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:19:45 by mosakura         ###   ########.fr       */
+/*   Created: 2025/10/23 19:34:07 by mosakura          #+#    #+#             */
+/*   Updated: 2025/10/23 19:47:24 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *, ...)
+#include "libft.h"
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list	*nlist;
+	t_list	*list;
 
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%d\n", "gwg");
-	return 0;
+	if (!lst || !del)
+		return ;
+	list = *lst;
+	while (list)
+	{
+		nlist = list->next;
+		ft_lstdelone(list, del);
+		list = nlist;
+	}
+	*lst = NULL;
+	list = NULL;
+	nlist = NULL;
 }

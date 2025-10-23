@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 17:55:51 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:19:45 by mosakura         ###   ########.fr       */
+/*   Created: 2025/10/23 19:07:27 by mosakura          #+#    #+#             */
+/*   Updated: 2025/10/23 19:12:20 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *, ...)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
+	int	i;
 
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%d\n", "gwg");
-	return 0;
+	if (!lst)
+		return (0);
+	i = 1;
+	while (lst->next)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

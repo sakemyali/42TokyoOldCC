@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 17:55:51 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:19:45 by mosakura         ###   ########.fr       */
+/*   Created: 2025/10/22 21:01:15 by mosakura          #+#    #+#             */
+/*   Updated: 2025/10/23 18:35:00 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_printf(const char *, ...)
+#include "libft.h"
+
+t_list	*ft_lstnew(void *content)
 {
+	t_list	*list;
 
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%d\n", "gwg");
-	return 0;
+	list = (t_list *)malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

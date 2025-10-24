@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:11:11 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 16:18:46 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:45:04 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 
 	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
+	s = (const unsigned char *)src;
 	if (d < s)
 	{
 		i = 0;

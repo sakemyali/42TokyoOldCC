@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:15:04 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:05:32 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/24 23:03:22 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (sign == 1 && (LONG_MAX - res * 10) <= nptr[i])
-			return ((int)LONG_MAX);
-		if (sign == -1 && (LONG_MAX - res * 10) <= nptr[i] - 1)
+		if (res > ((LONG_MAX - (nptr[i] - '0')) / 10) && sign == -1)
 			return ((int)LONG_MIN);
+		if (res > ((LONG_MAX - (nptr[i] - '0')) / 10) && sign == 1)
+			return ((int)LONG_MAX);
 		res = (res * 10) + (nptr[i] - '0');
 		i++;
 	}

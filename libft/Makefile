@@ -6,7 +6,7 @@
 #    By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 18:50:53 by mosakura          #+#    #+#              #
-#    Updated: 2025/10/23 21:37:21 by mosakura         ###   ########.fr        #
+#    Updated: 2025/10/24 22:51:28 by mosakura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,7 @@ bonus: $(BONUS_OBJS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)

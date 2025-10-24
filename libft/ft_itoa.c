@@ -6,13 +6,13 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:15:17 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 15:46:09 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:42:15 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	nbrlen(long n)
+static size_t	nbrlen(long n)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ size_t	nbrlen(long n)
 	return (i);
 }
 
-char	*getnbrstr(long n, size_t nlen, int sign)
+static char	*getnbrstr(long n, size_t nlen, int sign)
 {
 	char	*res;
 

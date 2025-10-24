@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 17:55:51 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/25 00:04:09 by mosakura         ###   ########.fr       */
+/*   Created: 2025/10/24 23:09:09 by mosakura          #+#    #+#             */
+/*   Updated: 2025/10/24 23:57:08 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-static int	getformattype(char c)
+void	ft_putchar(char c)
 {
-	int		i;
-	char	*fspec;
+	write(1, &c, 1);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
 
 	i = 0;
-	fspec = "cspdiuxX%";
-	while (fspec[i])
-	{
-		if (fspec[i] == c)
-			return (i + 1);
+	while (str[i])
 		i++;
-	}
-	return (0);
+	return (i);
 }
 
-void	printformat(int c, void *var)
+void	print_hex(int n)
 {
-
-}
-
-int	ft_printf(const char *str, ...)
-{
-
-}
-
-int main()
-{
-	// printf("%d\n", "gwg");
-	return 0;
+	if (n >= 16)
+		print_hex(n / 16);
+	n = n % 16;
+	n += n < 10 ? '0' : 'a' - 10;
+	write(1, &n, 1);
 }

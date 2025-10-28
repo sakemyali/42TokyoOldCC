@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:15:09 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 16:10:45 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:49:21 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
 
-	if (nmemb != 0 && size > __SIZE_MAX__ / nmemb)
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
 		return (NULL);
 	res = (void *)malloc(nmemb * size);
 	if (!res)

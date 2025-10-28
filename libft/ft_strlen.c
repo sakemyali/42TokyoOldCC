@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 14:04:00 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 15:22:53 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:32:43 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	current;
+	size_t	i;
 
-	current = 0;
-	while (*s)
-	{
-		s++;
-		current++;
-	}
-	return (current);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

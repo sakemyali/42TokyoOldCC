@@ -6,7 +6,7 @@
 #    By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 18:50:53 by mosakura          #+#    #+#              #
-#    Updated: 2025/10/24 22:51:28 by mosakura         ###   ########.fr        #
+#    Updated: 2025/10/28 18:12:45 by mosakura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,14 +47,15 @@ SRCS		= ft_memset.c \
 			  ft_putnbr_fd.c \
 			  ft_striteri.c
 
-BONUS_SRCS = ft_lstnew.c \
-			 ft_lstadd_front.c \
-			 ft_lstsize.c ft_lstlast.c \
-             ft_lstadd_back.c \
-			 ft_lstdelone.c \
-			 ft_lstclear.c \
-			 ft_lstiter.c \
-			 ft_lstmap.c
+BONUS_SRCS = ft_lstnew_bonus.c \
+			 ft_lstadd_front_bonus.c \
+			 ft_lstsize_bonus.c \
+			 ft_lstlast_bonus.c \
+             ft_lstadd_back_bonus.c \
+			 ft_lstdelone_bonus.c \
+			 ft_lstclear_bonus.c \
+			 ft_lstiter_bonus.c \
+			 ft_lstmap_bonus.c
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -62,25 +63,27 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 CC			= cc
 
-FLAGS		= -Wall -Werror -Wextra -I ./
+CFLAGS		= -Wall -Werror -Wextra -I ./
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	ar rcs $@ $^
+
+bonus: bonus.stamp
+bonus.stamp:$(OBJS) $(BONUS_OBJS)
+			ar rcs $(NAME) $^
+			touch $@
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-
-bonus: $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
-
-all: $(NAME)
-
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS) bonus.stamp
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

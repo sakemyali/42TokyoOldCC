@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:14 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:05:07 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/28 17:12:44 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-
 	if (!s)
 		return ;
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &(s[i]), 1);
-		i++;
-	}
+	else
+		write(fd, s, ft_strlen(s));
 }

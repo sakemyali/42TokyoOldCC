@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:41:55 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/23 20:39:52 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:50:51 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <unistd.h> // write
 # include <stdlib.h> // malloc, free
-# include <limits.h> // INT_MAX, LONG_MAX, SIZE_MAX
+# include <limits.h> // INT_MAX, LONG_MAX
+# include <stdint.h> // SIZE_MAX
 
 typedef struct s_list
 {

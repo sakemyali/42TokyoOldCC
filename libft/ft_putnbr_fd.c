@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:09 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/22 20:05:07 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:08:58 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	size_t	i;
+	long	nb;
+	char	ch;
 
-	i = 0;
-	str = ft_itoa(n);
-	if (!str)
-		return ;
-	while (str[i])
+	nb = n;
+	if (nb < 0)
 	{
-		write(fd, &(str[i]), 1);
-		i++;
+		write(fd, "-", 1);
+		nb = -nb;
 	}
-	free(str);
-	str = NULL;
+	if (nb >= 10)
+		ft_putnbr_fd((int)(nb / 10), fd);
+	ch = (char)((nb % 10) + '0');
+	write(fd, &ch, 1);
 }

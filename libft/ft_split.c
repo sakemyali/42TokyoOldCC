@@ -6,16 +6,16 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:16 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/24 22:48:25 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:29:08 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	i;
-	int		count;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -26,6 +26,23 @@ static int	count_words(char const *s, char c)
 		i++;
 	}
 	return (count);
+}
+
+static char	**freeall(char **res)
+{
+	size_t	i;
+
+	i = 0;
+	if (res)
+	{
+		while (res[i])
+		{
+			free(res[i]);
+			i++;
+		}
+		free(res);
+	}
+	return (NULL);
 }
 
 static char	*getstr(const char *s, char c)
@@ -62,7 +79,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 	char	**res;
-	int		count;
+	size_t	count;
 
 	if (!s)
 		return (NULL);
@@ -76,6 +93,8 @@ char	**ft_split(char const *s, char c)
 	{
 		i = getstart(s, c, i);
 		res[j] = getstr(s + i, c);
+		if (!res[j])
+			return (freeall(res));
 		i += ft_strlen(res[j]);
 		j++;
 		count--;

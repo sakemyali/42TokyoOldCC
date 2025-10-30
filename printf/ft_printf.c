@@ -52,6 +52,7 @@ char	formatchar(char *str, size_t count)
 size_t	printformat(int c, void *var, size_t idx)
 {
 
+	
 	return (idx);
 }
 

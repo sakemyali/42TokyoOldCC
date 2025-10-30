@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:14:57 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/18 16:26:57 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/30 18:00:29 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t			i;
-	int unsigned	size_of_src;
+	size_t	i;
+	size_t	size_of_src;
 
 	size_of_src = ft_strlen(src);
 	i = 0;

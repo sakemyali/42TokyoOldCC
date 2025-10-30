@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:18:39 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/25 22:16:09 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/30 22:51:27 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int				i;
-	int				count;
-	unsigned char	cc;
+	size_t	i;
+	size_t	count;
+	char	cc;
 
-	cc = (unsigned char)c;
-	count = -1;
+	cc = (char)c;
+	count = 0;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == cc)
-			count = i;
+			count = i + 1;
 		i++;
 	}
 	if (cc == '\0')
 		return ((char *)s + i);
-	if (count == -1)
+	if (count == 0)
 		return (NULL);
-	return ((char *)s + count);
+	return ((char *)s + (count - 1));
 }

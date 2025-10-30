@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:16:16 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/28 16:29:08 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/30 21:13:32 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,12 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static char	**freeall(char **res)
+static char	**freeall(char **res, size_t j)
 {
-	size_t	i;
-
-	i = 0;
 	if (res)
 	{
-		while (res[i])
-		{
-			free(res[i]);
-			i++;
-		}
+		while (0 < j)
+			free(res[j--]);
 		free(res);
 	}
 	return (NULL);
@@ -87,6 +81,7 @@ char	**ft_split(char const *s, char c)
 	res = (char **)malloc((count + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
+	res[count] = NULL;
 	i = 0;
 	j = 0;
 	while (count != 0)
@@ -94,11 +89,10 @@ char	**ft_split(char const *s, char c)
 		i = getstart(s, c, i);
 		res[j] = getstr(s + i, c);
 		if (!res[j])
-			return (freeall(res));
+			return (freeall(res, j));
 		i += ft_strlen(res[j]);
 		j++;
 		count--;
 	}
-	res[j] = NULL;
 	return (res);
 }

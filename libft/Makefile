@@ -6,7 +6,7 @@
 #    By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 18:50:53 by mosakura          #+#    #+#              #
-#    Updated: 2025/10/28 18:12:45 by mosakura         ###   ########.fr        #
+#    Updated: 2025/10/30 22:48:06 by mosakura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,10 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 CC			= cc
 
+ifeq ($(MAKECMDGOALS), bonus)
+OBJS += $(BONUS_OBJS)
+endif
+
 CFLAGS		= -Wall -Werror -Wextra -I ./
 
 all: $(NAME)
@@ -70,16 +74,13 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-bonus: bonus.stamp
-bonus.stamp:$(OBJS) $(BONUS_OBJS)
-			ar rcs $(NAME) $^
-			touch $@
+bonus: ${NAME}
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS) bonus.stamp
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)

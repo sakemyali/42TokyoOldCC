@@ -6,7 +6,7 @@
 /*   By: mosakura <mosakura@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 15:15:04 by mosakura          #+#    #+#             */
-/*   Updated: 2025/10/24 23:03:22 by mosakura         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:55:28 by mosakura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	long long	res;
-	int			i;
-	int			sign;
+	long long		res;
+	size_t			i;
+	int				sign;
 
 	i = 0;
 	res = 0;
